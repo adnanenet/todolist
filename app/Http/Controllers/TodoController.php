@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Todo;
 use Illuminate\Http\Request;
 
 class TodoController extends Controller
@@ -13,6 +13,7 @@ class TodoController extends Controller
      */
     public function index()
     {
+        
         return view('welcome');
     }
 
@@ -33,19 +34,18 @@ class TodoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+    
     {
-        // validate the form
-        // $request->validate([
-        //     'task' => 'required|max:200'
-        // ]);
-        // store data
         
-        \DB::table('todos')->insert([
-            'task' => $request->task
+       request()->validate([
+           'title' => 'required|max:255'
         ]);
+        
+        $todo = new todo();
+        $todo->title = request('title');
+        $todo->save();
 
-        // redirect
-        return redirect('/')->with('status', 'Task added!');
+        return redirect('/');
     }
 
     /**
