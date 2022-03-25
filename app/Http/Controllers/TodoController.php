@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Models\Todo;
 use Illuminate\Http\Request;
-
 class TodoController extends Controller
 {
     /**
@@ -54,9 +53,10 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $title=Todo::all();
+        return view('welcome',compact('title'));
     }
 
     /**

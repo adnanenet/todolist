@@ -21,10 +21,13 @@
 
         <h2 class="text-white pt-2">My Todo List :</h2>
         <div class="bg-white w-100">
+            
+            @foreach ($title as $r)
             <div class="w-100 d-flex align-items-center justify-content-between">
-                <div class="p-4"></div>
-
+                <div class="p-4">{{$r->title}}</div>
+                
             </div>
+            @endforeach
 
         </div>
     </div>
