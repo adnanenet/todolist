@@ -20,7 +20,11 @@
         </form>
 
         <h2 class="text-white pt-2">My Todo List :</h2>
-        <div class="bg-white">
+        <div class="bg-white w-100">
+            <div class="w-100 d-flex align-items-center justify-content-between">
+                <div class="p-4"></div>
+
+            </div>
 
         </div>
     </div>
